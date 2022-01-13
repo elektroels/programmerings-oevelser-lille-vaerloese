@@ -18,8 +18,9 @@ h1 {
   position: absolute;
   margin: 0;
   top: -4px;
-  right: 5px;
 
+  /* Gennemsigtige bogstaver med color transparent */
+  /* hvor man kun kan se deres skygge; dette giver en sløret effekt */
   color: transparent;
   text-shadow: 0 0 4px white;
 }

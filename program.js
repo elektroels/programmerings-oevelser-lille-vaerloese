@@ -3,37 +3,33 @@
 const canvas = document.querySelector('canvas');
 const ctx = canvas.getContext('2d');
 
+// TODO: Lav det her dynamisk så det følger hvis man re-sizer vinduet =)
 const width = canvas.width = window.innerWidth;
 const height = canvas.height = window.innerHeight;
 
-// function to generate random number
-
-function random(min, max) {
-  const num = Math.floor(Math.random() * (max - min + 1)) + min;
-  return num;
+// function til at generere et tilfaeldigt tal/nummer
+function random(minimum, maximum) {
+  return Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
 }
 
-
-function Ball(x, y, velX, velY, color, size) {
-  this.x = x;
-  this.y = y;
-  this.velX = velX;
-  this.velY = velY;
-  this.color = color;
+/* Definer hvad en bold er */
+function Bold(x, y, velX, velY, color, size) {
+  this.x = x;       // Random ? > nej koordinat system
+  this.y = y;       // Random ? > nej koordinat system
+  this.velX = velX; // Random mellem 2 tal > nej bevægelses-visning
+  this.velY = velY; // Random mellem 2 tal > nej bevægelses-visning
+  this.color = color; // Rando
   this.size = size;
 }
 
-Ball.prototype.draw = function() {
+Bold.prototype.draw = function() {
   ctx.beginPath();
   ctx.fillStyle = this.color;
   ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
   ctx.fill();
 }
 
-let testBall = new Ball(50, 100, 4, 4, 'blue', 10);
-
-
-Ball.prototype.update = function() {
+Bold.prototype.update = function() {
   if ((this.x + this.size) >= width) {
     this.velX = -(this.velX);
   }
@@ -52,21 +48,23 @@ Ball.prototype.update = function() {
 
   this.x += this.velX;
   this.y += this.velY;
+
+  this.draw()
 }
 
+/* ØVELSE 1 */
+//let testBold = new Bold(50, 100, 4, 4, 'blue', 10);
+//testBold.draw()
 
-testBall.x
-testBall.size
-testBall.color
-testBall.draw()
 
+/* ØVELSE SIDST */
 let balls = [];
 
-while (balls.length < 25) {
+while (balls.length < 5) {
   let size = random(10,20);
-  let ball = new Ball(
-    // ball position always drawn at least one ball width
-    // away from the edge of the canvas, to avoid drawing errors
+  let ball = new Bold(
+    // ball position always draw at least one ball width
+    // away from the edge of the canvas, to avoid tegning errors
     random(0 + size,width - size),
     random(0 + size,height - size),
     random(-7,7),
@@ -83,11 +81,11 @@ function loop() {
   ctx.fillRect(0, 0, width, height);
 
   for (let i = 0; i < balls.length; i++) {
-    balls[i].draw();
-    balls[i].update();
+    //balls[i].draw()
+    balls[i].update()
   }
 
   requestAnimationFrame(loop);
 }
 
-loop();
+//loop();
