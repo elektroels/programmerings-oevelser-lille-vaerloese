@@ -4,6 +4,6 @@
 // silver, maroon, purple, fuchsia, lime, olive, navy, teal, aqua
 
 let farve = 'orange'
-let bold = new Bold(50, 100, 4, 4, farve, 10)
+let bold = new Bold(farve)
 
 bold.draw()
