@@ -70,7 +70,7 @@ while (balls.length < 5) {
   balls.push(ball)
 }
 
-function loop() {
+function loloop() {
   ctx.fillStyle = 'rgba(0, 0, 0, 0.25)'
   ctx.fillRect(0, 0, width, height)
 
@@ -78,7 +78,7 @@ function loop() {
     balls[i].update()
   }
 
-  requestAnimationFrame(loop)
+  requestAnimationFrame(loloop)
 }
 
-//loop()
+//loloop()

@@ -1,9 +1,4 @@
-//let farve = 'orange'
-//let bold = new Bold(50, 100, 4, 4, farve, 10)
-//
-//bold.draw()
-
-// øvelse 2
+// Øvelse 2: opdater bolden / tegn den mange gange
 // Skriv bold.update() 1 gang og se hvad der sker.
 // Skriv herefter bold.update() 10-20 gange i træk og se hvad der sker.
 // Skriv herefter bold.update() 200-300 gange i træk og se hvad der sker.
