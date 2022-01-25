@@ -7,7 +7,7 @@ let loop = function() {
 
   // Det her er lidt "sort magi", i er velkomne til at spørge
   // men det kan godt være jeg ikke kan finde ud af at forklare det :-)
-  requestAnimationFrame(loloop)
+  requestAnimationFrame(loop)
 }
 
-//loloop()
+//loop()
