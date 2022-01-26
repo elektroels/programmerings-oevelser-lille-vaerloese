@@ -9,7 +9,7 @@
 
 loop = function () {
 
-  bolde.forEach(bold => bold.update())
+  //bolde.forEach(bold => bold.update())
 
   // Det her er lidt "sort magi", i er velkomne til at spørge
   // men det kan godt være jeg ikke kan finde ud af at forklare det :-)
